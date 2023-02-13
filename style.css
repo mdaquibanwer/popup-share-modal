@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #752082;
+}
+.popup-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px 25px;
+    font-size: 22px;
+    color: #752082;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: -150%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    width: 380px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0s 0.2s ease-in-out,
+                opacity 0.2s 0s ease-in-out,
+                transform 0.2s 0s ease-in-out,
+}
+.container.show{
+    opacity: 1;
+    pointer-events: auto;
+    top: 50%;
+    transition: top 0s 0.2s ease-in-out,
+                opacity 0.2s 0s ease-in-out,
+                transform 0.2s 0s ease-in-out,
+}
+.container :is(header, .icons,.field){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container header{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+}
+header span{
+    font-size: 24px;
+    font-weight: 600;
+}
+:where(header .close,.icons a){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .close{
+    height: 33px;
+    width: 33px;
+    color: #878787;
+    border-radius: 50%;
+    cursor: pointer;
+}
+header .close:hover{
+    background: #f2f2f2;
+}
+.container .content{
+    margin: 20px 0;
+}
+.content p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.content .icons{
+    margin: 15px 0 20px 0;
+}
+.icons a{
+    height: 50px;
+    width: 50px;
+    font-size: 22px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.icons a:nth-child(1){
+    color: #1877f2;
+    border-color: #b7d47b;
+}
+.icons a:nth-child(1):hover{
+    background-color: #1877f2;
+}
+.icons a:nth-child(2){
+    color: #46c1f6;
+    border-color: #b6e7fc;
+}
+.icons a:nth-child(2):hover{
+    background-color: #46c1f6;
+}
+.icons a:nth-child(3){
+    color: #e1306c;
+    border-color: #f5bccf;
+}
+.icons a:nth-child(3):hover{
+    background-color: #e1306c;
+}
+.icons a:nth-child(4){
+    color: #25d366;
+    border-color: #bef4d2;
+}
+.icons a:nth-child(4):hover{
+    background-color: #25d366;
+}
+.icons a:nth-child(5){
+    color: #0088cc;
+    border-color: #b3e6ff;
+}
+.icons a:nth-child(5):hover{
+    background-color: #0088cc;
+}
+.icons a:hover{
+    color: #fff;
+    border-color: transparent;
+}
+.icons a i{
+    transition: transform 0.3s ease-in-out;
+}
+.icons a:hover i{
+    transform: scale(1.1);
+}
+.content .field{
+    margin: 12px 0 -5px;
+    height: 45px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+.field.active{
+    border-color: #752082;
+}
+.field i{
+    width: 50px;
+    text-align: center;
+    font-size: 18px
+}
+.field.active i{
+    color: #752082;
+}
+.field input{
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+.field input::selection{
+    background-color: #752082;
+    color: #fff;
+}
+.field button{
+    padding: 5px 18px;
+    border: 2px solid transparent;
+    color: #fff;
+    background-color: #752082;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
